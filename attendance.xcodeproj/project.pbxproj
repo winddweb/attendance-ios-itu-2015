@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72387E08596D356AB3913089 /* Pods_attendance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9287845B1BDF131C0002EA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287845A1BDF131C0002EA0F /* AppDelegate.swift */; };
-		9287845D1BDF131C0002EA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287845C1BDF131C0002EA0F /* ViewController.swift */; };
 		928784601BDF131C0002EA0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9287845E1BDF131C0002EA0F /* Main.storyboard */; };
 		928784621BDF131C0002EA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928784611BDF131C0002EA0F /* Assets.xcassets */; };
 		928784651BDF131C0002EA0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928784631BDF131C0002EA0F /* LaunchScreen.storyboard */; };
 		928784701BDF131C0002EA0F /* attendanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287846F1BDF131C0002EA0F /* attendanceTests.swift */; };
 		9287847B1BDF131C0002EA0F /* attendanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287847A1BDF131C0002EA0F /* attendanceUITests.swift */; };
+		9287848A1BDF153E0002EA0F /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784881BDF153E0002EA0F /* DashViewController.swift */; };
+		9287848B1BDF153E0002EA0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784891BDF153E0002EA0F /* LoginViewController.swift */; };
+		9287848F1BDF15A90002EA0F /* ManageClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287848C1BDF15A90002EA0F /* ManageClassTableViewController.swift */; };
+		928784901BDF15A90002EA0F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287848D1BDF15A90002EA0F /* RegisterViewController.swift */; };
+		928784911BDF15A90002EA0F /* Sample-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287848E1BDF15A90002EA0F /* Sample-data.swift */; };
+		928784931BDF16280002EA0F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784921BDF16280002EA0F /* Course.swift */; };
+		928784951BDF164D0002EA0F /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784941BDF164D0002EA0F /* ClassCell.swift */; };
+		928784971BDF16710002EA0F /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784961BDF16710002EA0F /* ClassDetailViewController.swift */; };
+		928784991BDF168C0002EA0F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784981BDF168C0002EA0F /* Utility.swift */; };
+		9287849B1BDF1DA30002EA0F /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CEB521D941BD559623319C7 /* Pods-attendance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-attendance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-attendance/Pods-attendance.debug.xcconfig"; sourceTree = "<group>"; };
 		928784571BDF131C0002EA0F /* attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9287845A1BDF131C0002EA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9287845C1BDF131C0002EA0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9287845F1BDF131C0002EA0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		928784611BDF131C0002EA0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928784641BDF131C0002EA0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,18 @@
 		928784761BDF131C0002EA0F /* attendanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = attendanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9287847A1BDF131C0002EA0F /* attendanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendanceUITests.swift; sourceTree = "<group>"; };
 		9287847C1BDF131C0002EA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928784881BDF153E0002EA0F /* DashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
+		928784891BDF153E0002EA0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9287848C1BDF15A90002EA0F /* ManageClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageClassTableViewController.swift; sourceTree = "<group>"; };
+		9287848D1BDF15A90002EA0F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9287848E1BDF15A90002EA0F /* Sample-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sample-data.swift"; sourceTree = "<group>"; };
+		928784921BDF16280002EA0F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		928784941BDF164D0002EA0F /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		928784961BDF16710002EA0F /* ClassDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		928784981BDF168C0002EA0F /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
+		BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_attendance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4DDAA54F56B46BCAC76C210 /* Pods-attendance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-attendance.release.xcconfig"; path = "Pods/Target Support Files/Pods-attendance/Pods-attendance.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72387E08596D356AB3913089 /* Pods_attendance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B27574E03FC84678E3EEDFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9287844E1BDF131C0002EA0F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +112,8 @@
 				9287846E1BDF131C0002EA0F /* attendanceTests */,
 				928784791BDF131C0002EA0F /* attendanceUITests */,
 				928784581BDF131C0002EA0F /* Products */,
+				E22EFCAAB743A96AB71CEC9E /* Pods */,
+				2B27574E03FC84678E3EEDFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +131,17 @@
 			isa = PBXGroup;
 			children = (
 				9287845A1BDF131C0002EA0F /* AppDelegate.swift */,
-				9287845C1BDF131C0002EA0F /* ViewController.swift */,
 				9287845E1BDF131C0002EA0F /* Main.storyboard */,
+				928784881BDF153E0002EA0F /* DashViewController.swift */,
+				9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */,
+				928784891BDF153E0002EA0F /* LoginViewController.swift */,
+				9287848C1BDF15A90002EA0F /* ManageClassTableViewController.swift */,
+				928784941BDF164D0002EA0F /* ClassCell.swift */,
+				928784961BDF16710002EA0F /* ClassDetailViewController.swift */,
+				928784981BDF168C0002EA0F /* Utility.swift */,
+				928784921BDF16280002EA0F /* Course.swift */,
+				9287848D1BDF15A90002EA0F /* RegisterViewController.swift */,
+				9287848E1BDF15A90002EA0F /* Sample-data.swift */,
 				928784611BDF131C0002EA0F /* Assets.xcassets */,
 				928784631BDF131C0002EA0F /* LaunchScreen.storyboard */,
 				928784661BDF131C0002EA0F /* Info.plist */,
@@ -125,6 +167,15 @@
 			path = attendanceUITests;
 			sourceTree = "<group>";
 		};
+		E22EFCAAB743A96AB71CEC9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CEB521D941BD559623319C7 /* Pods-attendance.debug.xcconfig */,
+				F4DDAA54F56B46BCAC76C210 /* Pods-attendance.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9287847F1BDF131C0002EA0F /* Build configuration list for PBXNativeTarget "attendance" */;
 			buildPhases = (
+				3B224EFC4ABE56AB7C583D53 /* Check Pods Manifest.lock */,
 				928784531BDF131C0002EA0F /* Sources */,
 				928784541BDF131C0002EA0F /* Frameworks */,
 				928784551BDF131C0002EA0F /* Resources */,
+				CF305EF23B92D606EFC8453B /* Embed Pods Frameworks */,
+				12C76BEF5399D2C83355C8F7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +308,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12C76BEF5399D2C83355C8F7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-attendance/Pods-attendance-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B224EFC4ABE56AB7C583D53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF305EF23B92D606EFC8453B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-attendance/Pods-attendance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		928784531BDF131C0002EA0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9287845D1BDF131C0002EA0F /* ViewController.swift in Sources */,
+				928784971BDF16710002EA0F /* ClassDetailViewController.swift in Sources */,
+				9287849B1BDF1DA30002EA0F /* SelectRoleViewController.swift in Sources */,
+				928784951BDF164D0002EA0F /* ClassCell.swift in Sources */,
+				928784931BDF16280002EA0F /* Course.swift in Sources */,
+				928784991BDF168C0002EA0F /* Utility.swift in Sources */,
+				9287848B1BDF153E0002EA0F /* LoginViewController.swift in Sources */,
+				9287848A1BDF153E0002EA0F /* DashViewController.swift in Sources */,
+				928784901BDF15A90002EA0F /* RegisterViewController.swift in Sources */,
+				928784911BDF15A90002EA0F /* Sample-data.swift in Sources */,
+				9287848F1BDF15A90002EA0F /* ManageClassTableViewController.swift in Sources */,
 				9287845B1BDF131C0002EA0F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +509,7 @@
 		};
 		928784801BDF131C0002EA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CEB521D941BD559623319C7 /* Pods-attendance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = attendance/Info.plist;
@@ -409,6 +521,7 @@
 		};
 		928784811BDF131C0002EA0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DDAA54F56B46BCAC76C210 /* Pods-attendance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = attendance/Info.plist;
@@ -485,6 +598,7 @@
 				928784811BDF131C0002EA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		928784821BDF131C0002EA0F /* Build configuration list for PBXNativeTarget "attendanceTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +607,7 @@
 				928784841BDF131C0002EA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		928784851BDF131C0002EA0F /* Build configuration list for PBXNativeTarget "attendanceUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +616,7 @@
 				928784871BDF131C0002EA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
