@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import DBAlertController
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginEmailTextField: UITextField!
+    @IBOutlet weak var loginPasswordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +32,32 @@ class LoginViewController: UIViewController {
         super.touchesBegan(touches, withEvent: event)
     }
     
-
+    @IBAction func loginSignInPressed(sender: AnyObject) {
+        
+        // check user input is empty
+        if loginEmailTextField.text!.isEmpty || loginPasswordTextField.text!.isEmpty
+        {
+            let message = "Email or password could not be empty"
+            
+            let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            alertController.show()
+        } else {
+            displayLoginInfo()
+        }
+        
+    }
+    
+    func displayLoginInfo() {
+        
+        view.endEditing(true)
+        
+        let message = loginEmailTextField.text! + "\n" + loginPasswordTextField.text!
+        
+        let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.show()
+    }
     /*
     // MARK: - Navigation
 

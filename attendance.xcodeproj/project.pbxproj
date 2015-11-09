@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72387E08596D356AB3913089 /* Pods_attendance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		72387E08596D356AB3913089 /* Pods_attendance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */; };
+		9263B7C51BE80F1D00DF2AEE /* GenerateReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9263B7C41BE80F1D00DF2AEE /* GenerateReportTableViewController.swift */; };
+		9263B7C71BE8270400DF2AEE /* ManualAttendanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9263B7C61BE8270400DF2AEE /* ManualAttendanceTableViewController.swift */; };
+		9263B7C91BE82A2900DF2AEE /* TakeManualAttendanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9263B7C81BE82A2900DF2AEE /* TakeManualAttendanceTableViewController.swift */; };
 		9287845B1BDF131C0002EA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287845A1BDF131C0002EA0F /* AppDelegate.swift */; };
 		928784601BDF131C0002EA0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9287845E1BDF131C0002EA0F /* Main.storyboard */; };
 		928784621BDF131C0002EA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928784611BDF131C0002EA0F /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 		928784971BDF16710002EA0F /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784961BDF16710002EA0F /* ClassDetailViewController.swift */; };
 		928784991BDF168C0002EA0F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928784981BDF168C0002EA0F /* Utility.swift */; };
 		9287849B1BDF1DA30002EA0F /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */; };
+		92DA8F451BEEC9F400CC70BB /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA8F441BEEC9F400CC70BB /* RegisterTableViewController.swift */; };
+		92DA8F471BF01E7D00CC70BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA8F461BF01E7D00CC70BB /* User.swift */; };
+		92DA8F491BF0261E00CC70BB /* RegisterStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA8F481BF0261E00CC70BB /* RegisterStudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		1CEB521D941BD559623319C7 /* Pods-attendance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-attendance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-attendance/Pods-attendance.debug.xcconfig"; sourceTree = "<group>"; };
+		9263B7C41BE80F1D00DF2AEE /* GenerateReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportTableViewController.swift; sourceTree = "<group>"; };
+		9263B7C61BE8270400DF2AEE /* ManualAttendanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualAttendanceTableViewController.swift; sourceTree = "<group>"; };
+		9263B7C81BE82A2900DF2AEE /* TakeManualAttendanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeManualAttendanceTableViewController.swift; sourceTree = "<group>"; };
 		928784571BDF131C0002EA0F /* attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9287845A1BDF131C0002EA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9287845F1BDF131C0002EA0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +76,9 @@
 		928784961BDF16710002EA0F /* ClassDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		928784981BDF168C0002EA0F /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
+		92DA8F441BEEC9F400CC70BB /* RegisterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		92DA8F461BF01E7D00CC70BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		92DA8F481BF0261E00CC70BB /* RegisterStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterStudentViewController.swift; sourceTree = "<group>"; };
 		BD79D639B0F12A0FDCAD6764 /* Pods_attendance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_attendance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDAA54F56B46BCAC76C210 /* Pods-attendance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-attendance.release.xcconfig"; path = "Pods/Target Support Files/Pods-attendance/Pods-attendance.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,13 +143,19 @@
 			isa = PBXGroup;
 			children = (
 				9287845A1BDF131C0002EA0F /* AppDelegate.swift */,
+				9263B7C41BE80F1D00DF2AEE /* GenerateReportTableViewController.swift */,
 				9287845E1BDF131C0002EA0F /* Main.storyboard */,
+				9263B7C81BE82A2900DF2AEE /* TakeManualAttendanceTableViewController.swift */,
 				928784881BDF153E0002EA0F /* DashViewController.swift */,
+				9263B7C61BE8270400DF2AEE /* ManualAttendanceTableViewController.swift */,
 				9287849A1BDF1DA30002EA0F /* SelectRoleViewController.swift */,
+				92DA8F441BEEC9F400CC70BB /* RegisterTableViewController.swift */,
 				928784891BDF153E0002EA0F /* LoginViewController.swift */,
 				9287848C1BDF15A90002EA0F /* ManageClassTableViewController.swift */,
+				92DA8F481BF0261E00CC70BB /* RegisterStudentViewController.swift */,
 				928784941BDF164D0002EA0F /* ClassCell.swift */,
 				928784961BDF16710002EA0F /* ClassDetailViewController.swift */,
+				92DA8F461BF01E7D00CC70BB /* User.swift */,
 				928784981BDF168C0002EA0F /* Utility.swift */,
 				928784921BDF16280002EA0F /* Course.swift */,
 				9287848D1BDF15A90002EA0F /* RegisterViewController.swift */,
@@ -361,15 +379,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DA8F491BF0261E00CC70BB /* RegisterStudentViewController.swift in Sources */,
+				9263B7C51BE80F1D00DF2AEE /* GenerateReportTableViewController.swift in Sources */,
+				92DA8F451BEEC9F400CC70BB /* RegisterTableViewController.swift in Sources */,
 				928784971BDF16710002EA0F /* ClassDetailViewController.swift in Sources */,
 				9287849B1BDF1DA30002EA0F /* SelectRoleViewController.swift in Sources */,
+				92DA8F471BF01E7D00CC70BB /* User.swift in Sources */,
 				928784951BDF164D0002EA0F /* ClassCell.swift in Sources */,
 				928784931BDF16280002EA0F /* Course.swift in Sources */,
 				928784991BDF168C0002EA0F /* Utility.swift in Sources */,
 				9287848B1BDF153E0002EA0F /* LoginViewController.swift in Sources */,
+				9263B7C71BE8270400DF2AEE /* ManualAttendanceTableViewController.swift in Sources */,
 				9287848A1BDF153E0002EA0F /* DashViewController.swift in Sources */,
 				928784901BDF15A90002EA0F /* RegisterViewController.swift in Sources */,
 				928784911BDF15A90002EA0F /* Sample-data.swift in Sources */,
+				9263B7C91BE82A2900DF2AEE /* TakeManualAttendanceTableViewController.swift in Sources */,
 				9287848F1BDF15A90002EA0F /* ManageClassTableViewController.swift in Sources */,
 				9287845B1BDF131C0002EA0F /* AppDelegate.swift in Sources */,
 			);

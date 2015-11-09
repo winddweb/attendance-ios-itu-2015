@@ -28,11 +28,12 @@ class SelectRoleViewController: UIViewController {
     //        userDefaults.setObject("Professor", forKey: userRole )
     //        userDefaults.setObjdect("Student", forKey: userRole )
 
+    @IBAction func studentRolePressed(sender: AnyObject) {
+        userDefaults.setObject("Student", forKey: userRole )
+    }
 
     @IBAction func professorRolePressed(sender: AnyObject) {
         userDefaults.setObject("Professor", forKey: userRole )
-        
-        print(userDefaults.stringForKey(userRole))
     }
     
 

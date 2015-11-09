@@ -1,90 +1,80 @@
 //
-//  ManageClassTableViewController.swift
-//  Attendance Tracker
+//  TakeManualAttendanceTableViewController.swift
+//  attendance
 //
-//  Created by Yifeng on 10/17/15.
+//  Created by Yifeng on 11/2/15.
 //  Copyright © 2015 the Pioneers. All rights reserved.
 //
 
 import UIKit
 import DBAlertController
 
-class ManageClassTableViewController: UITableViewController {
+class TakeManualAttendanceTableViewController: UITableViewController {
     
-    let cellIdentifier = "classCell"
-    var courses:[Course] = coursesData // load fake data for courses
-    
+    var selectedCourse: Course?
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let currentCourse = selectedCourse!
+        
+        title = currentCourse.getCourseCode()
+        
+        let message = "Taking attendance for \(currentCourse.getCourseCode())."
+        
+        let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.show()
+
     }
 
     override func didReceiveMemoryWarning() {
-        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-        
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    @IBAction func addAttendancePressed(sender: AnyObject) {
         
-        return courses.count
+        let message = "Attendance added."
+        
+        let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.show()
         
     }
     
+    @IBAction func saveManualAttendancePressed(sender: AnyObject) {
+
+        let message = "Attendance added."
+        
+        let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.show()
+        
+    }
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClassCell
-        
-        let course = courses[indexPath.row] as Course
-        
-        cell.course = course
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-//        self.performSegueWithIdentifier("viewClassDetail", sender: self)
-        
-    }
-    
-    
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "viewClassDetail"
-        {
-            
-            // destination
-            let svc = segue.destinationViewController as! ClassDetailViewController
-            
-            // get selected row path
-            let path = self.tableView.indexPathForSelectedRow!
-
-            // set destination course
-            svc.selectedCourse = courses[path.row]
-
-        }
-    }
-    
-    @IBAction func unwindToManageCourse(segue: UIStoryboardSegue) {
-        
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -94,25 +84,17 @@ class ManageClassTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-            let message = "Delete"
-            
-            let alertController = DBAlertController(title: "Warning", message: message, preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            alertController.show()
-            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -129,5 +111,14 @@ class ManageClassTableViewController: UITableViewController {
     }
     */
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

@@ -37,7 +37,7 @@ class ClassDetailViewController: UIViewController {
         
         print("ClassDetailViewController prints selectedCourse: \(selectedCourse)")
         
-        self.title = selectedCourse!.name
+        self.title = selectedCourse!.getCourseCode()
         
         displayCourseDetails(selectedCourse!)
     }
@@ -63,9 +63,9 @@ class ClassDetailViewController: UIViewController {
         
         self.durationEndLabel.text = NSDate().stringFromDate(course.durationEnd!, format: "MMM d, yyyy")
         
-        self.timingStartLabel.text = NSDate().stringFromDate(course.timingStart!, format: "H:mm a")
+        self.timingStartLabel.text = NSDate().stringFromDate(course.timeStart!, format: "H:mm a")
         
-        self.timingEndLabel.text = NSDate().stringFromDate(course.timingEnd!, format: "H:mm a")
+        self.timingEndLabel.text = NSDate().stringFromDate(course.timeEnd!, format: "H:mm a")
         
         self.dayOfWeekLabel.text = course.dayOfWeek
             

@@ -11,32 +11,33 @@ import UIKit
 class DashViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // check uer role
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let userRole = "User Role"
-        print("User Role (can be nil for first time user)")
-        print(userDefaults.stringForKey(userRole))
-//        if userDefaults.objectForKey(userRole) == nil { // production
-        if userDefaults.objectForKey(userRole) == nil || userDefaults.objectForKey(userRole) != nil  { // development
-            
-            print("show loginVC")
-            
-            // Load Login screen ##TODO
-            
-//            if let loginController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as? LoginViewController {
-//                
-//                self.navigationController?.presentViewController(loginController, animated: true, completion: nil)
-//                
-//            }
-            
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+
+        // check uer role
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userRole = "User Role"
         
+        print("User Role (nil for first time user)")
+        print(userDefaults.stringForKey(userRole))
+
+        if userDefaults.objectForKey(userRole) == nil { // production
+            print("should show login")
+            performSegueWithIdentifier("showLogin", sender: self)
+        }
+    }
+    
+    @IBAction func resetLoginPressed(sender: AnyObject) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userRole = "User Role"
+        
+        userDefaults.removeObjectForKey(userRole)
+        print("reset user role to ", userDefaults.stringForKey(userRole))
     }
     
     // in a tab view, viewDidLoad will only fire once
@@ -51,6 +52,35 @@ class DashViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func testButtonPressed(sender: AnyObject) {
+        
+        tabBarController?.selectedIndex = 1
+        
+        
+//        // Disable a tabbar item
+//        var tabbarTest: UITabBarItem = UITabBarItem()
+//        
+//        let tabBarControllerItems = self.tabBarController?.tabBar.items
+//        if let arrayOfTabBarItems = tabBarControllerItems as! AnyObject as? NSArray{
+//            
+//            tabbarTest = arrayOfTabBarItems[3] as! UITabBarItem
+//            tabbarTest.enabled = false
+//            
+//        }
+        
+        // remove a tabbar item
+        // viewControllers property is an array of all tabbar items
+        // remove the index from that array
+        // TODO: Find out which tabs are for students, and which are for professors.
+        if let tabBarController = self.tabBarController {
+            let indexToRemove = 3
+            if indexToRemove < tabBarController.viewControllers?.count {
+                var viewControllers = tabBarController.viewControllers
+                viewControllers?.removeAtIndex(indexToRemove)
+                tabBarController.viewControllers = viewControllers
+            }
+        }
     }
     
     @IBAction func unwindToDashboard(segue: UIStoryboardSegue) {

@@ -12,7 +12,6 @@ import UIKit
 struct Course {
 //    var dateComponents = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Hour, .Minute, .Second, .Weekday] , fromDate: NSDate())
     
-    var id: Int
     var name: String
     var isWeekend: Bool = false
     var code: String
@@ -20,19 +19,18 @@ struct Course {
     var room: String
     var durationStart: NSDate? = NSDate()
     var durationEnd: NSDate? = NSDate()
-    var timingStart: NSDate? = NSDate()
-    var timingEnd: NSDate? = NSDate()
+    var timeStart: NSDate? = NSDate()
+    var timeEnd: NSDate? = NSDate()
     var dayOfWeek: String? = "Sunday"
     var trimester: String? = "Spring 2016"
+    var professor: String? // email of professor
     
     init(
-        id: Int,
         name: String,
         isWeekend: Bool,
         code: String,
         room: String)
     {
-        self.id = id
         self.name = name
         self.code = code
         self.isWeekend = isWeekend
@@ -40,15 +38,15 @@ struct Course {
         self.room = room
 //        self.durationStart = durationStart
 //        self.durationEnd = durationEnd
-//        self.timingStart = timingStart
-//        self.timingEnd = timingEnd
+//        self.timeStart = timingStart
+//        self.timeEnd = timingEnd
 //        self.dayOfWeek = dayOfWeek
 //        self.trimester = trimester
     }
     
     func getCourseCode() -> String {
         
-        return self.code + " " + String(self.section)
+        return self.code + " " + String(self.section!)
         
     }
 }
