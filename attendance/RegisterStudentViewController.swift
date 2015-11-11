@@ -12,15 +12,14 @@ import DBAlertController
 class RegisterStudentViewController: UIViewController {
     
     var userToRegister: User?
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let keyIsNewUser = "New User"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let message = "User Current value: \(userToRegister)"
-        
-        let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        alertController.show()
+        Utils.alert("Submit Form",
+            message: "User Current value: \(userToRegister)", okAction: "Submit")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +28,20 @@ class RegisterStudentViewController: UIViewController {
     }
     
 
+    @IBAction func submitStudentRegisterPressed(sender: AnyObject) {
+        
+        Utils.alert("Submit Form",
+            message: "User Current value: \(userToRegister)", okAction: "Submit")
+        
+        successStudentRegister()
+        
+    }
+    
+    func successStudentRegister() {
+        // set user flag
+        userDefaults.setObject(NSDate(), forKey: keyIsNewUser )
+        
+    }
     /*
     // MARK: - Navigation
 
