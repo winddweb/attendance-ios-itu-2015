@@ -35,7 +35,7 @@ class ClassDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("ClassDetailViewController prints selectedCourse: \(selectedCourse)")
+        // print("ClassDetailViewController prints selectedCourse: \(selectedCourse)")
         
         self.title = selectedCourse!.getCourseCode()
         
