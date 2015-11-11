@@ -11,13 +11,16 @@ import DBAlertController
 
 class RegisterTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var studentProfileImageView: UIImageView!
-    @IBOutlet weak var studentFirstNameTextField: UITextField!
-    @IBOutlet weak var studentLastNameTextField: UITextField!
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    
+    @IBOutlet weak var userFirstNameTextField: UITextField!
+    @IBOutlet weak var userLastNameTextField: UITextField!
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userPasswordTextField: UITextField!
+    
     @IBOutlet weak var studentGenderSegment: UISegmentedControl!
-    @IBOutlet weak var studentEmailTextField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
-    @IBOutlet weak var studentPasswordTextField: UITextField!
+    
 
     let userRole = "User Role"
     let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -61,16 +64,27 @@ class RegisterTableViewController: UITableViewController, UIImagePickerControlle
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 1
 //    }
-
+    
+    // MARK: UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 80
+    }
+    
+    
+    // student action
     @IBAction func nextButtonPressed(sender: AnyObject) {
 
         // validation of all fields
 
     }
-
+    
+    // user action
     @IBAction func chooseImagePressed(sender: AnyObject) {
 
         imagePicker.allowsEditing = true
+        
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
@@ -82,46 +96,50 @@ class RegisterTableViewController: UITableViewController, UIImagePickerControlle
 
         if segue.identifier == "registerStudentNext"
         {
+            let isStudent = true
             
-            saveCurrentUserInfo()
+            saveCurrentUserInfo(isStudent)
             
-            let selectedSegment = Genders(rawValue: studentGenderSegment.selectedSegmentIndex)!
-            switch selectedSegment {
-            case .Male:
-                userToRegister.gender = 1
-            case .Female:
-                userToRegister.gender = 2
-            }
-
             // destination
             let svc = segue.destinationViewController as! RegisterStudentViewController
-
+            
             // set destination course
             svc.userToRegister = userToRegister
 
         }
     }
     
-    func saveCurrentUserInfo () {
+    func saveCurrentUserInfo(isStudent: Bool? = false) {
         
-        userToRegister.firstName = studentFirstNameTextField.text!
-        userToRegister.lastName = studentLastNameTextField.text!
-        userToRegister.email = studentEmailTextField.text!
-        userToRegister.studentID = studentIDTextField.text!
-        userToRegister.password = studentPasswordTextField.text!
-
+        userToRegister.firstName = userFirstNameTextField.text!
+        userToRegister.lastName = userLastNameTextField.text!
+        userToRegister.email = userEmailTextField.text!
+        userToRegister.password = userPasswordTextField.text!
+        
+        if isStudent ?? false {
+            userToRegister.studentID = studentIDTextField.text!
+            setUserGender()
+        }
+    }
+    
+    func setUserGender() {
+        let selectedSegment = Genders(rawValue: studentGenderSegment.selectedSegmentIndex)!
+        switch selectedSegment {
+        case .Male:
+            userToRegister.gender = 1
+        case .Female:
+            userToRegister.gender = 2
+        }
     }
 
 
     // MARK: - UIImagePickerControllerDelegate Methods
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        //handle media here i.e. do stuff with photo
-
+        
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let util = Utils()
-        studentProfileImageView.clipsToBounds = true
-        studentProfileImageView.image = util.RBSquareImage(chosenImage)
+
+        userProfileImageView.image = chosenImage.RBResizeImage(chosenImage, targetSize: CGSizeMake(128*3, 128*3))
 
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -132,11 +150,32 @@ class RegisterTableViewController: UITableViewController, UIImagePickerControlle
 
 
 
+    @IBAction func submitProfessorRegisterPressed(sender: AnyObject) {
+        
+        saveCurrentUserInfo()
+        
+        saveProfileImage()
+        
+        successProfessorRegister()
+        
+        Utils.alert("Submit Professor",
+            message: "Professor\n \(userToRegister)", okAction: "OK")
+        
+    }
+    
+    func successProfessorRegister() {
+        
+        let keyIsNewUser = "New User"
+        
+        // set user flag
+        userDefaults.setObject( NSDate(), forKey: keyIsNewUser )
+        
+    }
 
-
-
-
-
+    // TODO: save profile image to device
+    func saveProfileImage() {
+        
+    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -145,41 +184,6 @@ class RegisterTableViewController: UITableViewController, UIImagePickerControlle
         // Configure the cell...
 
         return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
 
