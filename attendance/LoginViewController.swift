@@ -8,17 +8,56 @@
 
 import UIKit
 import DBAlertController
+import SwiftValidator
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController , ValidationDelegate {
 
+    // TextFields
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
+
+    // Error Labels
+    @IBOutlet weak var errorEmailLabel: UILabel!
+    @IBOutlet weak var errorPasswordLabel: UILabel!
     
+    let orange = UIColor(red:1.00, green:0.45, blue:0.01, alpha:1.0)
+    let greenL1 = UIColor(red:0.58, green:0.75, blue:0.49, alpha:1.0)
+
+    
+    let validator = Validator()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        validator.styleTransformers(success:{ (validationRule) -> Void in
+            print("here")
+            // clear error label
+            validationRule.errorLabel?.hidden = true
+            validationRule.errorLabel?.text = ""
+            validationRule.textField.layer.borderColor = self.greenL1.CGColor
+            validationRule.textField.layer.borderWidth = 0.5
+            
+            }, error:{ (validationError) -> Void in
+                print("error")
+                validationError.errorLabel?.hidden = false
+                validationError.errorLabel?.text = validationError.errorMessage
+                validationError.textField.layer.borderColor = self.orange.CGColor
+                validationError.textField.layer.borderWidth = 0.5
+        })
+        
+        errorEmailLabel.hidden = true
+        errorPasswordLabel.hidden = true
+        
+        
+        // register validators
+        // TODO: implement custom email validation rule
+        validator.registerField(loginEmailTextField, errorLabel: errorEmailLabel, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+        validator.registerField(loginPasswordTextField, errorLabel: errorPasswordLabel, rules: [RequiredRule(), MinLengthRule(length: 7)])
+        
+        
+        // dismiss keyboard
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,18 +73,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginSignInPressed(sender: AnyObject) {
         
-        // check user input is empty
-        if loginEmailTextField.text!.isEmpty || loginPasswordTextField.text!.isEmpty
-        {
-            let message = "Email or password could not be empty"
-            
-            let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            alertController.show()
-        } else {
-            displayLoginInfo()
-        }
+        validator.validate(self)
         
+    }
+    
+    func validationSuccessful() {
+        // submit the form
+        displayLoginInfo()
+    }
+    
+    func validationFailed(errors:[UITextField:ValidationError]) {
+        // turn the fields to red
+        for (field, error) in validator.errors {
+            field.layer.borderColor = UIColor.redColor().CGColor
+            field.layer.borderWidth = 1.0
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.hidden = false
+        }
     }
     
     func displayLoginInfo() {
@@ -55,9 +99,24 @@ class LoginViewController: UIViewController {
         let message = loginEmailTextField.text! + "\n" + loginPasswordTextField.text!
         
         let alertController = DBAlertController(title: "Attendance", message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+            
+            // set user flag
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            let keyIsNewUser = "New User"
+            
+            userDefaults.setObject( NSDate(), forKey: keyIsNewUser )
+            
+            self.performSegueWithIdentifier("loginSuccess", sender: self)
+            
+        }))
         alertController.show()
     }
+    
+    func hideKeyboard(){
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
