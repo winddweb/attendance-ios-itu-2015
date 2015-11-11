@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DBAlertController
 
 // format time and date
 extension NSDate {
@@ -33,15 +34,25 @@ extension NSDate {
 }
 
 class Utils {
-    //
-    //  RBResizer.swift
-    //  Locker
-    //
-    //  Created by Hampton Catlin on 6/20/14.
-    //  Copyright (c) 2014 rarebit. All rights reserved.
-    //
     
+    static func alert(title: String, message: String, okAction: String, cancelAction: String? = nil) {
+        
+        let alertController = DBAlertController(title: title, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: okAction, style: .Default, handler: nil))
+        if let cancelAction = cancelAction {
+            alertController.addAction(UIAlertAction(title: cancelAction, style: .Cancel, handler: nil))
+        }
+        alertController.show()
+    }
+}
+
+extension UIImage {
+    //  RBResizer.swift Created by Hampton Catlin on 6/20/14.
+    //  Copyright (c) 2014 rarebit. All rights reserved.
     func RBSquareImageTo(image: UIImage, size: CGSize) -> UIImage {
+        
+        Utils.alert("Test Crop Image", message: "Crop", okAction: "Good")
+        
         return RBResizeImage(RBSquareImage(image), targetSize: size)
     }
     
@@ -80,6 +91,5 @@ class Utils {
         
         return newImage
     }
-    
 
 }
