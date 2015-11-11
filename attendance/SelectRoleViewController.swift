@@ -9,9 +9,9 @@
 import UIKit
 
 class SelectRoleViewController: UIViewController {
-
-    let userRole = "User Role"
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userRole = "User Role"
 
     override func viewDidLoad() {
         super.viewDidLoad()
